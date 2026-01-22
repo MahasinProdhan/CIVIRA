@@ -4,7 +4,7 @@ import { Home } from "./pages/Home";
 import { Dashboard } from "./pages/Dashboard";
 import RegisterComplaints from "./pages/RegisterComplaints";
 import MyComplaints from "./pages/MyComplaints";
-import { ComplaintDetails } from "./pages/ComplaintDetails";
+import ComplaintDetails from "./pages/ComplaintDetails";
 import Auth from "./pages/Auth";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -19,10 +19,12 @@ const App = () => {
   return (
     <div className="min-h-screen bg-primaryColor">
       <ToastContainer position="top-right" autoClose={3000} />
-      <Navbar></Navbar>
+      <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
+
         <Route
           path="/profile"
           element={
@@ -31,6 +33,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+
         <Route
           path="/register-complaints"
           element={
@@ -39,6 +42,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+
         <Route
           path="/my-complaints"
           element={
@@ -47,8 +51,10 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+
+        {/* ✅ FIXED DETAILS ROUTE */}
         <Route
-          path="/complaint-details"
+          path="/complaints/:id"
           element={
             <ProtectedRoute>
               <ComplaintDetails />
@@ -66,9 +72,8 @@ const App = () => {
         <Route path="/auth" element={<Auth />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <div>
-        <Footer></Footer>
-      </div>
+
+      <Footer />
     </div>
   );
 };
