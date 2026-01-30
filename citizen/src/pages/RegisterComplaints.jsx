@@ -157,8 +157,9 @@ const RegisterComplaints = () => {
 
       {/* Main Content */}
       <div className="relative z-10 w-full max-w-4xl px-6 mx-auto mt-10 mb-20">
+        {/* this is ProgressBar */}
         <ProgressBar currentStep={step} totalSteps={totalSteps} />
-
+        {/* this is the main box */}
         <div className="bg-white/70 backdrop-blur-xl border border-white shadow-xl rounded-3xl p-6 md:p-10 min-h-[450px]">
           {step === 1 && (
             <StepEvidence
