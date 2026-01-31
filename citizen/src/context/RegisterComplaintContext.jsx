@@ -165,7 +165,6 @@ export const AppProvider2 = ({ children }) => {
         setIsCameraOpen,
         isSubmitting,
         isSuccess,
-        setIsCameraOpen,
         setIsSuccess,
         validImages,
         setValidImages,
